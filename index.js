@@ -19,7 +19,7 @@ bot.commands = new Discord.Collection()
 //let cooldown = new Set();
 //let cdseconds = 5;
 //--------------------------------------------
-let warns = JSON.parse(fs.readFileSync("./warnings.json", "utf8"))
+//let warns = JSON.parse(fs.readFileSync("./warnings.json", "utf8"))
 // -------------------------------------------
 //################################
 let red = botconfig.red
