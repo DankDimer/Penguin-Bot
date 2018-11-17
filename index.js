@@ -186,22 +186,9 @@ bot.on("message", async message => {
     //===============================================================================================================================================
     //Beginning of Pinginator
     //***********************************************************************************************************************************************
-    for (x in message.mentions) {
-        if (x === "channels") {
-            if (x.first === null) {
-                console.log("No channels pinged.");
-            } else {
-                x.array.forEach(function(guildChannel) {
-                    message.guild.members.array.forEach(function(member) {
-                        if (guildChannel.permissionsFor(member.user).has("VIEW_CHANNEL")) {
-                            let user = member.user;
-                            user.send(`***A user has mentioned you.***\nItem: **${x}**\nUser: **${message.author}**`);
-                        }
-                    });
-                })
-            }
-        }
-    }
+    message.mentions.users.array.forEach(function(user) {
+        user.send(`***You have been pinged.***\nType: **USER**\nPinger: **${message.author.username}**`);
+    });
 
    setTimeout(() => {
         cooldown.delete(message.author.id)
