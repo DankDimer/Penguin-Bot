@@ -16,10 +16,10 @@ const bot = new Discord.Client()
 // -------------------------------------------
 bot.commands = new Discord.Collection()
 // -------------------------------------------
-//let cooldown = new Set();
-//let cdseconds = 5;
+let cooldown = new Set();
+let cdseconds = 1;
 //--------------------------------------------
-//let warns = JSON.parse(fs.readFileSync("./warnings.json", "utf8"))
+let warns = JSON.parse(fs.readFileSync("./warnings.json", "utf8"))
 // -------------------------------------------
 //################################
 let red = botconfig.red
@@ -181,9 +181,9 @@ bot.on("message", async message => {
     let commandfile = bot.commands.get(cmd.slice(prefix.length));
     if (commandfile) commandfile.run(bot, message, args);
 
-    setTimeout(() => {
+   setTimeout(() => {
         cooldown.delete(message.author.id)
-    }, cdseconds * 1000)
+    }, cdseconds * 1000) 
 });
 });
 //***********************************************************************************************************************************************
