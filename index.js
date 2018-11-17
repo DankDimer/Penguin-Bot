@@ -51,7 +51,7 @@ let magenta = botconfig.magenta
 //***********************************************************************************************************************************************
 //END OF CONSTANTS AND VARIABLES
 //***********************************************************************************************************************************************
-/*fs.readdir("./commands/", (err, files) => {
+fs.readdir("./commands/", (err, files) => {
 
     if (err) console.log(err);
     let jsfile = files.filter(f => f.split(".").pop() === "js");
@@ -66,7 +66,7 @@ let magenta = botconfig.magenta
         console.log(`${f} loaded!`);
         bot.commands.set(props.help.name, props);
 });
-    */
+    
 //***********************************************************************************************************************************************
 //START OF ACTUAL BOT
 //***********************************************************************************************************************************************
@@ -84,13 +84,13 @@ bot.on("message", async message => {
     if (message.author.bot) return;
     if (message.channel.type === "dm") return;
 
-    /*let prefixes = JSON.parse(fs.readFileSync("./prefix.json", "utf8"));
+    let prefixes = JSON.parse(fs.readFileSync("./prefix.json", "utf8"));
     if (!prefixes[message.guild.id]) {
         prefixes[message.guild.id] = {
             prefixes: botconfig.prefix
         };
     }
-    */
+    
     //***********************************************************************************************************************************************
     //Beginning of coin system
     //***********************************************************************************************************************************************
@@ -159,16 +159,16 @@ bot.on("message", async message => {
     //===============================================================================================================================================
     //Beginning of cooldown system
     //***********************************************************************************************************************************************
-    /*let prefix = prefixes[message.guild.id].prefixes;
+    let prefix = prefixes[message.guild.id].prefixes;
     if (!message.content.startsWith(prefix)) return;
     if (cooldown.has(message.author.id)) {
         message.delete();
         return message.reply("You have to wait 5 seconds between commands.")
-    /*}
+    }
     if (!message.member.hasPermission("ADMINISTRATOR")) {
         cooldown.add(message.author.id); 
     }
-    */
+    
     //***********************************************************************************************************************************************
     //End of cooldown system
     //===============================================================================================================================================
@@ -184,7 +184,7 @@ bot.on("message", async message => {
     setTimeout(() => {
         cooldown.delete(message.author.id)
     }, cdseconds * 1000)
-
+});
 });
 //***********************************************************************************************************************************************
 //End of command handler
