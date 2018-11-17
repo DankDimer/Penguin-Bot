@@ -103,7 +103,7 @@ bot.on("message", async message => {
             embed.color = 16007775
             embed.setAuthor("Pinged Alert!")
             embed.addField("Type: ", "**USER**")
-            embed.addField(`User:`, `**${message.author.username}**"`);
+            embed.addField(`User:`, `**${message.author.username}**`);
 
             user.user.send(embed);
         });
