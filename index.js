@@ -159,7 +159,7 @@ bot.on("message", async message => {
     //===============================================================================================================================================
     //Beginning of cooldown system
     //***********************************************************************************************************************************************
-    let prefix = prefixes[message.guild.id].prefixes;
+    /*let prefix = prefixes[message.guild.id].prefixes;
     if (!message.content.startsWith(prefix)) return;
     if (cooldown.has(message.author.id)) {
         message.delete();
@@ -184,7 +184,7 @@ bot.on("message", async message => {
     setTimeout(() => {
         cooldown.delete(message.author.id)
     }, cdseconds * 1000)
-    }
+
 });
 //***********************************************************************************************************************************************
 //End of command handler
