@@ -98,7 +98,14 @@ bot.on("message", async message => {
     if (message.mentions.members.first()) {
         message.mentions.members.forEach(function(user) {
             console.log("ponged");
-            user.user.send(`***You have been pinged.***\nType: **USER**\nPinger: **${message.author.username}**`);
+
+            let embed = new Discord.RichEmbed()
+            embed.color = 16007775
+            embed.setAuthor("Pinged Alert!")
+            embed.addField("Type: **USER**", true)
+            embed.addField(`User: **${message.author.username}**"`);
+
+            user.user.send(embed);
         });
     }   
     
