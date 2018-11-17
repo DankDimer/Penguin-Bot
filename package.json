@@ -1,0 +1,23 @@
+{
+  "name": "penguin-bot",
+  "version": "0.0.0",
+  "description": "Penguin bot made by DankDimer and Knoddy",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DankDimer/Penguin-Bot.git"
+  },
+  "author": "DankDimer / Knoddy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DankDimer/Penguin-Bot/issues"
+  },
+  "homepage": "https://github.com/DankDimer/Penguin-Bot#readme",
+  "dependencies": {
+    "discord.js": "^11.4.2",
+    "fs": "0.0.1-security"
+  }
+}
