@@ -96,7 +96,7 @@ bot.on("message", async message => {
     //***********************************************************************************************************************************************
 
     if (message.mentions.members.first()) {
-        message.mentions.members.array.forEach(function(user) {
+        message.mentions.members.forEach(function(user) {
             console.log("ponged");
             user.user.send(`***You have been pinged.***\nType: **USER**\nPinger: **${message.author.username}**`);
         });
