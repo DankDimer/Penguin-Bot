@@ -95,10 +95,12 @@ bot.on("message", async message => {
     //Beginning of pOLy System
     //***********************************************************************************************************************************************
 
-    message.mentions.users.array.forEach(function(user) {
-        console.log("ponged");
-        user.send(`***You have been pinged.***\nType: **USER**\nPinger: **${message.author.username}**`);
-    });
+    if (message.mentions.users.first()) {
+        message.mentions.users.array.forEach(function(user) {
+            console.log("ponged");
+            user.send(`***You have been pinged.***\nType: **USER**\nPinger: **${message.author.username}**`);
+        });
+    }   
     
     //***********************************************************************************************************************************************
     //Beginning of coin system
