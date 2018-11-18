@@ -82,6 +82,12 @@ bot.on("ready", async () => {
 //DELETE NON-PINNED MSGS IN #SUBMISSIONS AT MIDNIGHT
 //***********************************************************************************************************************************************
 
+let guild = bot.guilds.find(x => x.name === "Knoddy Industries");
+
+guild.channels.forEach(function(channel) {
+    console.log(channel.name);
+});
+
     schedule.scheduleJob("0 0 * * *", () => {
         if (bot.guilds.find(x => x.name === "Knoddy Industries")) {
             let guild = bot.guilds.find(x => x.name === "Knoddy Industries");
