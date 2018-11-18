@@ -84,7 +84,7 @@ bot.on("ready", async () => {
 
 let guild = bot.guilds.find(x => x.name === "Knoddy Industries");
 
-    schedule.scheduleJob("0 0 * * *", () => {
+    //schedule.scheduleJob("0 0 * * *", () => {
         if (bot.guilds.find(x => x.name === "Knoddy Industries")) {
             let guild = bot.guilds.find(x => x.name === "Knoddy Industries");
             
@@ -115,7 +115,7 @@ let guild = bot.guilds.find(x => x.name === "Knoddy Industries");
                 }
             }
         }
-    });
+    //});
 });
 //***********************************************************************************************************************************************
 bot.on("message", async message => {
