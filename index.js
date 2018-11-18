@@ -86,13 +86,16 @@ bot.on("ready", async () => {
         if (bot.guilds.find(x => x.name === "Knoddy Industries")) {
             let guild = bot.guilds.find(x => x.name === "Knoddy Industries");
             
+            console.log("dwasdwa");
             if (guild.channels.find(x => x.name === "submissions")) {
                 if (guild.channels.find(x => x.name === "submissions") === "text") {
                     function fetchMsgs() {
                         let channel = guild.channels.find(x => x.name === "submissions");
 
-                        channel.fetchMessages( {limit: 100})
+                        channel.fetchMessages( {limit: 100} )
                         .then(function(messages) {
+                            console.log("dwasdwa");
+
                             if (messages.size === 0) {
                                 return;
                             }
