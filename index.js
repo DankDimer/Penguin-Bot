@@ -130,7 +130,7 @@ bot.on("message", async message => {
     if (message.mentions.channels.first()) {
         message.mentions.channels.forEach(function(channel) {
             message.guild.members.forEach(function(member) {
-                if (message.channel.permissionsFor(member).has("VIEW_MESSAGES")) {
+                if (message.channel.permissionsFor(member).has("VIEW_CHANNEL")) {
                     let embed = new Discord.RichEmbed()
                     embed.color = 16007775
                     embed.setAuthor("Pinged Alert!", "https://i.imgur.com/ZrT9MM0.png")
