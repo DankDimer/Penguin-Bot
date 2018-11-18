@@ -97,13 +97,11 @@ bot.on("message", async message => {
 
     if (message.mentions.members.first()) {
         message.mentions.members.forEach(function(user) {
-            console.log("ponged");
-
             let embed = new Discord.RichEmbed()
             embed.color = 16007775
             embed.setAuthor("Pinged Alert!", "https://i.imgur.com/ZrT9MM0.png")
-            embed.addField("Type: ", "**USER**")
-            embed.addField(`User:`, `**${message.author.username}**`)
+            embed.addField("Type: ", "**USER**", true)
+            embed.addField(`User:`, `**${message.author.username}**`, true)
             embed.addField("Message", message.content);
 
             user.user.send(embed);
@@ -117,8 +115,8 @@ bot.on("message", async message => {
                     let embed = new Discord.RichEmbed()
                     embed.color = 16007775
                     embed.setAuthor("Pinged Alert!", "https://i.imgur.com/ZrT9MM0.png")
-                    embed.addField("Type: ", "**ROLE**")
-                    embed.addField(`User:`, `**${message.author.username}**`)
+                    embed.addField("Type: ", "**ROLE**", true)
+                    embed.addField(`User:`, `**${message.author.username}**`, true)
                     embed.addField("Message", message.content);
 
                     member.user.send(embed);
