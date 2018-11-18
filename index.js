@@ -84,21 +84,36 @@ bot.on("ready", async () => {
 
 let guild = bot.guilds.find(x => x.name === "Knoddy Industries");
 
-guild.channels.forEach(function(channel) {
-    console.log(channel.name);
-});
-
     schedule.scheduleJob("0 0 * * *", () => {
         if (bot.guilds.find(x => x.name === "Knoddy Industries")) {
             let guild = bot.guilds.find(x => x.name === "Knoddy Industries");
-
-            guild.channels.forEach(function(channel) {
-                console.log(channel.name);
-            });
             
-            // if (guild.channels.find(x => x.name === "submissions")) {
+            if (guild.channels.find(x => x.name === "submissions")) {
+                let channel = guild.channels.find(x => x.name === "submissions");
 
-            // }
+                if (channel.type === "text") {
+                    function fetchMsgs() {
+                        channel.fetchMessages({ limit: 100 })
+                        .then(function(messages) {
+                            if (messages.size === 0) {
+                                return
+                            }
+
+                            messages.forEach(function(message) {
+                                if (message.pinned === true) {
+                                    // Don't Delete
+                                } else {
+                                    message.delete();
+                                }
+                            });
+
+                            fetchMsgs();
+                        })
+                    }
+
+                    fetchMsgs();
+                }
+            }
         }
     });
 });
