@@ -101,7 +101,7 @@ bot.on("message", async message => {
 
             let embed = new Discord.RichEmbed()
             embed.color = 16007775
-            embed.setAuthor("Pinged Alert!", "https://i.imgur.com/rQaL40n.png")
+            embed.setAuthor("Pinged Alert!", "https://i.imgur.com/ZrT9MM0.png")
             embed.addField("Type: ", "**USER**")
             embed.addField(`User:`, `**${message.author.username}**`);
 
