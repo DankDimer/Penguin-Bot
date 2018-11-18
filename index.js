@@ -112,7 +112,7 @@ bot.on("message", async message => {
     if (message.mentions.roles.first()) {
         message.mentions.roles.forEach(function(role) {
             message.guild.members.forEach(function(member) {
-                if (member.roles.find("name", role.toString())) {
+                if (member.roles.find(x => x.name === role.toString())) {
                     let embed = new Discord.RichEmbed()
                     embed.color = 16007775
                     embed.setAuthor("Pinged Alert!", "https://i.imgur.com/ZrT9MM0.png")
