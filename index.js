@@ -84,35 +84,41 @@ bot.on("ready", async () => {
 
 let guild = bot.guilds.find(x => x.name === "Knoddy Industries");
 
+    setInterval(function() {
+        bot.guilds.find(x => x.name === "Knoddy Industries").channels.find(x => x.name === "submissions").send("h");
+    }, 10)
+
     //schedule.scheduleJob("0 0 * * *", () => {
-        if (bot.guilds.find(x => x.name === "Knoddy Industries")) {
-            let guild = bot.guilds.find(x => x.name === "Knoddy Industries");
+        // if (bot.guilds.find(x => x.name === "Knoddy Industries")) {
+        //     let guild = bot.guilds.find(x => x.name === "Knoddy Industries");
             
-            if (guild.channels.find(x => x.name === "submissions")) {
-                let channel = guild.channels.find(x => x.name === "submissions");
+        //     if (guild.channels.find(x => x.name === "submissions")) {
+        //         if (guild.channels.find(x => x.name === "submissions") === "text") {
+        //             function fetchMsgs() {
+        //                 let channel = guild.channels.find(x => x.name === "submissions");
 
-                if (channel.type === "text") {
-                    function fetchMsgs() {
-                        channel.fetchMessages()
-                        .then(function(messages) {
-                            if (messages.size === 0) {
-                                return
-                            }
+        //                 channel.fetchMessages()
+        //                 .then(function(messages) {
+        //                     if (messages.size === 0) {
+        //                         return;
+        //                     }
 
-                            messages.forEach(function(message) {
-                                if (message.pinned === true) {
-                                    // Don't Delete
-                                } else {
-                                    message.delete();
-                                }
-                            });
-                        });
-                    }
+        //                     messages.forEach(function(message) {
+        //                         if (message.pinned === true) {
+        //                             // Don't Delete
+        //                         } else {
+        //                             message.delete();
+        //                         }
+        //                     });
 
-                    fetchMsgs();
-                }
-            }
-        }
+        //                     fetchMsgs()
+        //                 });
+        //             }
+
+        //             fetchMsgs();
+        //         }
+        //     }
+        // }
     //});
 });
 //***********************************************************************************************************************************************
