@@ -89,7 +89,7 @@ bot.on("ready", async () => {
             console.log("dwasdwa");
             if (guild.channels.find(x => x.name === "submissions")) {
                 console.log("dwasdwa");
-                if (guild.channels.find(x => x.name === "submissions") === "text") {
+                if (guild.channels.find(x => x.name === "submissions").type === "text") {
                     console.log("dwasdwa");
                     function fetchMsgs() {
                         let channel = guild.channels.find(x => x.name === "submissions");
