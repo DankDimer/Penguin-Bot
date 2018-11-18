@@ -103,7 +103,8 @@ bot.on("message", async message => {
             embed.color = 16007775
             embed.setAuthor("Pinged Alert!", "https://i.imgur.com/ZrT9MM0.png")
             embed.addField("Type: ", "**USER**")
-            embed.addField(`User:`, `**${message.author.username}**`);
+            embed.addField(`User:`, `**${message.author.username}**`)
+            embed.addField("Message", message.content);
 
             user.user.send(embed);
         });
@@ -117,7 +118,8 @@ bot.on("message", async message => {
                     embed.color = 16007775
                     embed.setAuthor("Pinged Alert!", "https://i.imgur.com/ZrT9MM0.png")
                     embed.addField("Type: ", "**ROLE**")
-                    embed.addField(`User:`, `**${message.author.username}**`);
+                    embed.addField(`User:`, `**${message.author.username}**`)
+                    embed.addField("Message", message.content);
 
                     member.user.send(embed);
                 };
