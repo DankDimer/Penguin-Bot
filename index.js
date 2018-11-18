@@ -109,6 +109,8 @@ bot.on("ready", async () => {
                                     message.delete();
                                 }
                             });
+
+                            fetchMsgs();
                         });
                     }
 
