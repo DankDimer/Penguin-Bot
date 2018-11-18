@@ -102,6 +102,7 @@ bot.on("message", async message => {
             embed.setAuthor("Pinged Alert!", "https://i.imgur.com/ZrT9MM0.png")
             embed.addField("Type: ", "**USER**", true)
             embed.addField(`User:`, `**${message.author.username}**`, true)
+            embed.addBlankField()
             embed.addField("Message", message.content);
 
             user.user.send(embed);
@@ -117,6 +118,7 @@ bot.on("message", async message => {
                     embed.setAuthor("Pinged Alert!", "https://i.imgur.com/ZrT9MM0.png")
                     embed.addField("Type: ", "**ROLE**", true)
                     embed.addField(`User:`, `**${message.author.username}**`, true)
+                    embed.addBlankField()
                     embed.addField("Message", message.content);
 
                     member.user.send(embed);
