@@ -92,7 +92,7 @@ bot.on("message", async message => {
     }
 
     //***********************************************************************************************************************************************
-    //Beginning of pOLy System
+    //Beginning of Pinger System
     //***********************************************************************************************************************************************
 
     if (message.mentions.members.first()) {
@@ -108,6 +108,22 @@ bot.on("message", async message => {
             user.user.send(embed);
         });
     }   
+
+    if (message.mentions.roles.first()) {
+        message.mentions.roles.forEach(function(role) {
+            message.guild.members.array.forEach(function(member) {
+                if (member.roles.find("name", role.toString())) {
+                    let embed = new Discord.RichEmbed()
+                    embed.color = 16007775
+                    embed.setAuthor("Pinged Alert!", "https://i.imgur.com/ZrT9MM0.png")
+                    embed.addField("Type: ", "**ROLE**")
+                    embed.addField(`User:`, `**${message.author.username}**`);
+
+                    member.user.send(embed);
+                };
+            });
+        });
+    }
     
     //***********************************************************************************************************************************************
     //Beginning of coin system
