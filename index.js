@@ -93,7 +93,7 @@ let guild = bot.guilds.find(x => x.name === "Knoddy Industries");
 
                 if (channel.type === "text") {
                     function fetchMsgs() {
-                        channel.fetchMessages({ limit: 100 })
+                        channel.fetchMessages()
                         .then(function(messages) {
                             if (messages.size === 0) {
                                 return
