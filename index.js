@@ -126,6 +126,24 @@ bot.on("message", async message => {
             });
         });
     }
+
+    if (message.mentions.channels.first()) {
+        message.mentions.channels.forEach(function(channel) {
+            message.guild.members.forEach(function(member) {
+                if (message.channel.permissionsFor(member).has("VIEW_MESSAGES")) {
+                    let embed = new Discord.RichEmbed()
+                    embed.color = 16007775
+                    embed.setAuthor("Pinged Alert!", "https://i.imgur.com/ZrT9MM0.png")
+                    embed.addField("Type: ", "**CHANNEL**", true)
+                    embed.addField(`User:`, `**${message.author.username}**`, true)
+                    embed.addBlankField()
+                    embed.addField("Message", message.content);
+
+                    member.user.send(embed);
+                }
+            });
+        });
+    }
     
     //***********************************************************************************************************************************************
     //Beginning of coin system
