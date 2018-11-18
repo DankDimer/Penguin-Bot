@@ -4,6 +4,7 @@
 const Discord = require("discord.js");
 const fs = require("fs");
 const discord = require("discord.js");
+const schedule = require("node-schedule");
 //----------------------------------------------------------------------------
 // -------------------------------------------
 const colors = require("./colors.json")
@@ -77,6 +78,23 @@ bot.on("ready", async () => {
         type: "PLAYING"
     });
 
+//***********************************************************************************************************************************************
+//DELETE NON-PINNED MSGS IN #SUBMISSIONS AT MIDNIGHT
+//***********************************************************************************************************************************************
+
+    schedule.scheduleJob("0 0 * * *", () => {
+        if (bot.guilds.find(x => x.name === "Knoddy Industries")) {
+            let guild = bot.guilds.find(x => x.name === "Knoddy Industries");
+
+            guild.channels.forEach(function(channel) {
+                console.log(channel.name);
+            });
+            
+            // if (guild.channels.find(x => x.name === "submissions")) {
+
+            // }
+        }
+    });
 });
 //***********************************************************************************************************************************************
 bot.on("message", async message => {
