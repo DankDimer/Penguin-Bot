@@ -111,7 +111,7 @@ bot.on("message", async message => {
 
     if (message.mentions.roles.first()) {
         message.mentions.roles.forEach(function(role) {
-            message.guild.members.array.forEach(function(member) {
+            message.guild.members.forEach(function(member) {
                 if (member.roles.find("name", role.toString())) {
                     let embed = new Discord.RichEmbed()
                     embed.color = 16007775
