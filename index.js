@@ -106,8 +106,6 @@ let guild = bot.guilds.find(x => x.name === "Knoddy Industries");
                                     message.delete();
                                 }
                             });
-
-                            fetchMsgs()
                         });
                     }
 
